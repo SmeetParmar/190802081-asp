@@ -30,7 +30,7 @@ public partial class Login : System.Web.UI.Page
                 Session["name"] = TextBox1.Text;
                 TextBox1.Text = "";
                 TextBox2.Text = "";
-                Response.Redirect("~/Default.aspx");
+                Response.Redirect("~/Admin_Index.aspx");
             }
             else
             {
