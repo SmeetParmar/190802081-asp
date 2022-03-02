@@ -1,15 +1,16 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="Login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="register.aspx.cs" Inherits="register_user" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
- <meta charset="utf-8"/>
+<head>
+    <title></title>
+    <meta charset="utf-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
   <meta name="description" content=""/>
   <meta name="author" content=""/>
-  <title>Dashtreme Admin - Free Dashboard for Bootstrap 4 by Codervent</title>
+  <title>Register</title>
   <!-- loader-->
   <link href="assets/css/pace.min.css" rel="stylesheet"/>
   <script src="assets/js/pace.min.js"></script>
@@ -26,7 +27,7 @@
   
 </head>
 <body>
-<body class="bg-theme bg-theme1">
+  <body class="bg-theme bg-theme1">
 
 <!-- start loader -->
    <div id="pageloader-overlay" class="visible incoming"><div class="loader-wrapper-outer"><div class="loader-wrapper-inner" ><div class="loader"></div></div></div></div>
@@ -42,25 +43,32 @@
 		 	<div class="text-center">
 		 		<img src="assets/images/logo-icon.png" alt="logo icon">
 		 	</div>
-		  <div class="card-title text-uppercase text-center py-3">Sign In</div>
-		    <form runat="server">
+		  <div class="card-title text-uppercase text-center py-3">Registration Form</div>
+		    <form id="Form1" runat="server">
 			  <div class="form-group">
-			  <label for="exampleInputUsername" class="sr-only">Username</label>
+	
 			   <div class="position-relative has-icon-right">
-                   <asp:TextBox ID="TextBox1"  runat="server" class="form-control input-shadow" placeholder="Enter Username"></asp:TextBox>
-                 
-				  <div class="form-control-position">
-					  
+                   <%--<asp:TextBox ID="TextBox1"  runat="server" class="form-control input-shadow" placeholder="Enter Username"></asp:TextBox>--%>
+                   <asp:TextBox ID="TextBox1" runat="server" class="form-control input-shadow" placeholder="Enter Username"></asp:TextBox>
+				  <div class="form-control-position">  
 				  </div>
 			   </div>
 			  </div>
 			  <div class="form-group">
-			  <label for="exampleInputPassword" class="sr-only">Password</label>
+			 
 			   <div class="position-relative has-icon-right">
+                   <%--<asp:TextBox ID="TextBox2" runat="server" type="password" class="form-control input-shadow" placeholder="Enter Password"></asp:TextBox>--%>
                    <asp:TextBox ID="TextBox2" runat="server" type="password" class="form-control input-shadow" placeholder="Enter Password"></asp:TextBox>
-            
-				  <div class="form-control-position">
-					  
+				  <div class="form-control-position">  
+				  </div>
+			   </div>
+			  </div>
+                <div class="form-group">
+			
+			   <div class="position-relative has-icon-right">
+                   <%--<asp:TextBox ID="TextBox2" runat="server" type="password" class="form-control input-shadow" placeholder="Enter Password"></asp:TextBox>--%>
+                   <asp:TextBox ID="TextBox3" runat="server" type="password" class="form-control input-shadow" placeholder="Enter Conform Password"></asp:TextBox>
+				  <div class="form-control-position">  
 				  </div>
 			   </div>
 			  </div>
@@ -71,20 +79,18 @@
                 <label for="user-checkbox">Remember me</label>
 			  </div>
 			 </div>
-			 <div class="form-group col-6 text-right">
+			 <div class="form-group col-6 text-right mt-1">
 			  <a href="reset-password.html">Reset Password</a>
 			 </div>
 			</div>
 		
-             <asp:Button ID="Button2" type="submit" class="btn btn-light btn-block" runat="server" Text="Login" onclick="demo" />
-			
-			  
-			
+             <%--<asp:Button ID="Button2" type="submit" class="btn btn-light btn-block" runat="server" Text="Login" onclick="demo" />--%>
+            <asp:Button ID="Button1" runat="server" class="btn btn-light btn-block" Text="Register" OnClick="demo" />
 			 </form>
 		   </div>
 		  </div>
-		  <div class="card-footer text-center py-3">
-		    <p class="text-warning mb-0">Do not have an account? <a href="register.aspx">Register Here</a></p>
+		   <div class="card-footer text-center py-3">
+		    <p class="text-warning mb-0">Already A Member? <a href="Login.aspx">Login Here</a></p>
 		  </div>
 	     </div>
     
@@ -93,41 +99,7 @@
     <!--End Back To Top Button-->
 	
 	<!--start color switcher-->
-   <div class="right-sidebar">
-    <div class="switcher-icon">
-      <i class="zmdi zmdi-settings zmdi-hc-spin"></i>
-    </div>
-    <div class="right-sidebar-content">
-
-      <p class="mb-0">Gaussion Texture</p>
-      <hr>
-      
-      <ul class="switcher">
-        <li id="theme1"></li>
-        <li id="theme2"></li>
-        <li id="theme3"></li>
-        <li id="theme4"></li>
-        <li id="theme5"></li>
-        <li id="theme6"></li>
-      </ul>
-
-      <p class="mb-0">Gradient Background</p>
-      <hr>
-      
-      <ul class="switcher">
-        <li id="theme7"></li>
-        <li id="theme8"></li>
-        <li id="theme9"></li>
-        <li id="theme10"></li>
-        <li id="theme11"></li>
-        <li id="theme12"></li>
-		<li id="theme13"></li>
-        <li id="theme14"></li>
-        <li id="theme15"></li>
-      </ul>
-      
-     </div>
-   </div>
+   
   <!--end color switcher-->
 	
 	</div><!--wrapper-->
@@ -142,24 +114,5 @@
   
   <!-- Custom scripts -->
   <script src="assets/js/app-script.js"></script>
-<%--<table align="center" style="height: 153px; width: 450px">
-<tr><td>
-   <form id="form1" runat="server">
-   <div class="col-md-6">
-    <asp:Label ID="Label1" runat="server" Text="Login Form" Font-Bold="True" 
-            Font-Italic="True" Font-Size="XX-Large"></asp:Label></tr></td>
-  <tr><td><div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label"><br/> Username</label>
-     <asp:TextBox ID="TextBox1" type="text" class="form-control" runat="server"></asp:TextBox>
-  </div></tr></td>
-  <tr><td><div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <asp:TextBox ID="TextBox2" type="password" class="form-control" runat="server"></asp:TextBox>
-  </div></tr></td>
-  <tr><td> <asp:Button ID="Button1" type="submit" class="btn btn-primary" 
-          runat="server" Text="Login" onclick="demo" />
-    </div>
-    </form></tr></td>
-    </table>--%>
 </body>
 </html>
