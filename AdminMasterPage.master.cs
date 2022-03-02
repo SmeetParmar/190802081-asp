@@ -9,7 +9,10 @@ public partial class AdminMasterPage : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (Session["name"] == null)
+        {
+            Response.Redirect("~/Login.aspx");
+        }
     }
     protected void logout(object sender, EventArgs e)
     {

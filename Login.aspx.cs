@@ -13,6 +13,10 @@ public partial class Login : System.Web.UI.Page
     SqlConnection c;
     protected void Page_Load(object sender, EventArgs e)
     {
+        if(Session["name"]!=null)
+        {
+            Response.Redirect("~/Admin_Index.aspx");
+        }
         c = new SqlConnection(ConfigurationManager.ConnectionStrings["DatabaseConnectionString1"].ConnectionString);
     }
     protected void demo(object sender, EventArgs e)

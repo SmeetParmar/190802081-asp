@@ -36,7 +36,9 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <div class="hero_area">
+        <body class="sub_page">
+
+  <div class="hero_area">
     <div class="bg-box">
       <img src="images/hero-bg.jpg" alt="">
     </div>
@@ -56,17 +58,17 @@
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  mx-auto ">
-              <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+              <li class="nav-item">
+                <a class="nav-link" href="Client_Index.aspx">Home </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="menu.html">Menu</a>
+                <a class="nav-link" href="menu.aspx">Menu</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about.html">About</a>
+                <a class="nav-link" href="about.aspx">About</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="book.html">Book Table</a>
+              <li class="nav-item ">
+                <a class="nav-link" href="book.aspx">Book Table</a>
               </li>
             </ul>
             <div class="user_option">
@@ -141,6 +143,7 @@
       </div>
     </header>
     <!-- end header section -->
+    </div>
 
 
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
@@ -249,7 +252,6 @@
   <!-- Google Map -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
   </script>
-  <!-- End Google Map -->
 
     </div>
     </form>
