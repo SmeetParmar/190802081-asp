@@ -15,29 +15,28 @@ public partial class register_user : System.Web.UI.Page
     {
 
     }
-
     public void demo(object sender, EventArgs e)
     {
-        SqlCommand s = new SqlCommand("INSERT INTO [user] ([name],[password]) VALUES (@nm,@pw)", c);
-        s.Parameters.AddWithValue("@nm", TextBox1.Text.Trim());
+        SqlCommand s = new SqlCommand("INSERT INTO [user] ([name],[password]) VALUES (@nm,@pw)",c);
+        s.Parameters.AddWithValue("@nm",TextBox1.Text.Trim());
         s.Parameters.AddWithValue("@pw", TextBox2.Text.Trim());
         c.Open();
         int a = s.ExecuteNonQuery();
+        c.Close();
         if (a == 1)
-        {
-            Session["name"] = TextBox1.Text;
-            TextBox1.Text = "";
-            TextBox2.Text = "";
-            TextBox3.Text = "";
-            Response.Redirect("Login.aspx");
+        {    
+                TextBox1.Text = "";
+                TextBox2.Text = "";
+                TextBox3.Text = "";
+                Response.Write("<sript>alert('Registered Successfully')</script>");
+                Response.Redirect("~/Login.aspx");
         }
         else
         {
-            TextBox1.Text = "";
-            TextBox2.Text = "";
-            TextBox3.Text = "";
-            Response.Write("<script>alert('Error............')</script>");
+                TextBox1.Text = "";
+                TextBox2.Text = "";
+                TextBox3.Text = "";
+                Response.Write("<sript>alert('Error')</script>");
         }
-        c.Close();
+        }
     }
-}
