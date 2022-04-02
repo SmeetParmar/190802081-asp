@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
-using System.IO;
+using System.IO;     
 
   //DeleteCommand="DELETE FROM [products] WHERE [id] = @id" 
   //InsertCommand="INSERT INTO [products] ([name], [category], [description], [price], [image], [status]) VALUES (@name, @category, @description, @price, @image, @status)" 
