@@ -45,6 +45,7 @@ public partial class _Default : System.Web.UI.Page
     }
     protected void Button1_Click(object sender, EventArgs e)
     {
+    
         if (Button1.Text == "Update")
         {
             SqlCommand s = new SqlCommand("UPDATE [categories] SET [name] = @name, [status] = @s WHERE [id] =" + ViewState["id"].ToString(), c);
